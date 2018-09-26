@@ -9,17 +9,7 @@
 */
 
 function longest(s1, s2) {
-    var letters = s1.split('').concat(s2.split(''));
-    var result = [];
-
-    for (var i = 0; i < letters.length; i++) {
-        //using newer .includes instead of .indexOf
-        if (!result.includes(letters[i])) {
-            result.push(letters[i]);
-        }
-    }
-
-    return result.sort().join('');
+    return [...new Set(s1 + s2)].sort().join('');
 }
 
 export default longest;
